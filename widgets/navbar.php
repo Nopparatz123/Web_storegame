@@ -33,8 +33,8 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center justify-content-center">
-                <a href="./page/login.php" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
-                <a href="./page/register.php" class="btn btn-outline-primary">สมัครสมาชิก</a>
+                <a href="./page/login" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
+                <a href="./page/register" class="btn btn-outline-primary">สมัครสมาชิก</a>
             </div>
         </div>
 

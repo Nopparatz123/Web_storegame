@@ -49,42 +49,6 @@ body,html{
     padding: 10vw 5vw;
 }
 
-@media (max-width: 768px) {
-    .container-fluid {
-        padding: 5rem 2rem;
-    }
-
-    .carousel-item img {
-        max-height: 50vh;
-    }
-
-    .title {
-        position: relative;
-        margin-top: 70px;
-    }
-    
-    .title h1 {
-        font-size: 3rem;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-    }
-    
-    .title p {
-        margin-top: 250px;
-        font-size: 1rem;
-        text-align: center;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-    }
-    
-}
 
 .carousel-item img {
     width: 100%;
@@ -138,5 +102,43 @@ body,html{
     color: var(--blue);
 }
 
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 5rem 2rem;
+    }
+
+    .carousel-item img {
+        max-height: 50vh;
+    }
+
+    .title {
+        position: relative;
+        margin-top: 70px;
+        margin-right: 100px;
+    }
+    
+    .title h1 {
+        font-size: 3rem;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+    }
+    
+    .title p {
+        margin-top: 250px;
+        font-size: 1rem;
+        text-align: center;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+    }
+    
+}
 
 

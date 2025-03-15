@@ -34,7 +34,7 @@
                         <input type="checkbox" class="mb-3"> จดจำการเข้าสู่ระบบ
                         <button class="btn btn-primary w-100 rounded-4">เข้าสู่ระบบ</button>
                         <div class="text-center mt-3">
-                            <p>ถ้ายังไม่มีบัญชี <a href="">สมัครสมาชิกเลย</a></p>
+                            <p>ถ้ายังไม่มีบัญชี <a href="./register">สมัครสมาชิกเลย</a></p>
                             <p>เข้าสู่ระบบด้วยวิธีอื่น</p>
                         </div>
                     </div>
