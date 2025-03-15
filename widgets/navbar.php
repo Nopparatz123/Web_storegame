@@ -33,8 +33,20 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center justify-content-center">
-                <a href="./page/login" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
-                <a href="./page/register" class="btn btn-outline-primary">สมัครสมาชิก</a>
+                <?php if(isset($_SESSION['user_login'])){ ?>
+                    <ul class="dropdown navbar-nav">
+                        <li class="nav-item">
+                            <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><?= $_SESSION['username'] ?></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="" class="dropdown-item">โปรไฟล์</a></li>
+                                <li><a href="./controller/logout.php" class="dropdown-item text-danger">ออกจากระบบ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                <?php }else{ ?>
+                    <a href="./page/login" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
+                    <a href="./page/register" class="btn btn-outline-primary">สมัครสมาชิก</a>
+                <?php } ?>
             </div>
         </div>
 
