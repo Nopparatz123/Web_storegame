@@ -1,0 +1,135 @@
+:root {
+    --or : #c2c9da;
+    --pro : #585d6a;
+    --border-dark: rgba(51,54,62,1);
+    --new-dark: rgba(38,41,47,1);
+    --new-gray: rgb(242,242,242);
+    --blue: #449eff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --sec-color: #ff94b1;
+    --dark-light:  rgb(169,174,186);
+    --background: #1a1a1c;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url(./assets/Kanit-Regular.ttf);
+}
+
+body,html{
+    font-family: 'Kanit';
+    background: var(--background);
+    background-image: 
+    linear-gradient(to right, #1d1d1d 1px, transparent 1px),
+    linear-gradient(to bottom, #1d1d1d 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0
+}
+
+.container-fluid {
+    padding: 10vw 5vw;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 5rem 2rem;
+    }
+
+    .carousel-item img {
+        max-height: 50vh;
+    }
+
+    .title {
+        position: relative;
+        margin-top: 70px;
+    }
+    
+    .title h1 {
+        font-size: 3rem;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+    }
+    
+    .title p {
+        margin-top: 250px;
+        font-size: 1rem;
+        text-align: center;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+    }
+    
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar{
+    backdrop-filter: blur(5px);
+}
+
+
+.navbar-optin{
+    position: relative;
+    transition: 0.2s ease-in-out;
+    color: rgb(231, 231, 231);
+}
+
+.navbar-optin:hover{
+    color: var(--blue);
+}
+
+.navbar-optin::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--blue);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-optin:hover::after{
+    width: 100%;
+}
+.blackgroud-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 8%;
+}
+
+.actives{
+    color: var(--blue);
+}
