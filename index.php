@@ -11,15 +11,25 @@
     <link rel="stylesheet" href="./global.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
-    <?php require './widgets/modal.php'; ?>
+
+<div class="toast-container position-fixed bottom-0 end-0 mb-2 p-3">
+  <div id="welcomeToast" class="toast shadow-sm" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body text-primary">
+      ยินดีต้อนรับสู่เว็บของเรา !!
+    </div>
+  </div>
+</div>
+
     <video autoplay loop muted playsinline class="blackgroud-clip">
         <source src="./assets/video.mp4">
     </video>
-
+    
     <div class="container-fluid" style="padding: 15rem 22rem;">
+        <?php require './widgets/modal.php'; ?>
         <?php require './widgets/navbar.php'; ?>
         <div class="title text-center" style="margin-bottom: 50px;">
             <h1 class="text-light fw-bold" style="font-size: 70px;">ยินดีต้อนรับสู่เว็บควยๆ</h1>
@@ -53,7 +63,7 @@
         </div>
     </div>
 
-
+    <?php require './widgets/footer.php'; ?>
 </body>
 
 </html>
