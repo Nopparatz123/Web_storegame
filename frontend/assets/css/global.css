@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Kanit';
-    src: url(./assets/Kanit-Regular.ttf);
+    src: url(./Kanit-Regular.ttf);
 }
 
 body,html{
@@ -141,4 +141,11 @@ body,html{
     
 }
 
+.displayContent:first-of-type{
+    display: none;
+}
+
+.displayContent{
+    display: block;
+}
 

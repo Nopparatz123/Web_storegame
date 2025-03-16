@@ -12,22 +12,22 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav mx-auto g-4">
                 <li class="nav-item me-2">
-                    <a href="#" class="nav-link navbar-optin actives">
+                    <a href="home" class="nav-link navShowcontent navbar-optin actives" data-content="main">
                         <i class="bi bi-house-fill"></i> หน้าหลัก
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link navbar-optin">
+                    <a href="store" class="nav-link navShowcontent navbar-optin" data-content="store">
                         <i class="bi bi-shop"></i> ร้านค้า
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link navbar-optin">
+                    <a href="card" class="nav-link navShowcontent navbar-optin" data-content="card">
                         <i class="bi bi-credit-card"></i> เติมเงิน
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link navbar-optin">
+                    <a href="contact" class="nav-link navShowcontent navbar-optin" data-content="contact">
                         <i class="bi bi-file-earmark-person-fill"></i> ช่องทางการติดต่อ
                     </a>
                 </li>
@@ -44,8 +44,8 @@
                         </li>
                     </ul>
                 <?php }else{ ?>
-                    <a href="./page/login" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
-                    <a href="./page/register" class="btn btn-outline-primary">สมัครสมาชิก</a>
+                    <a href="/Web_storegame/login" class="btn btn-primary me-2">เข้าสู่ระบบ</a>
+                    <a href="/Web_storegame/register" class="btn btn-outline-primary">สมัครสมาชิก</a>
                 <?php } ?>
             </div>
         </div>
