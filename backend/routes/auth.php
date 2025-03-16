@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    require_once './backend/config/db.php';
+    require_once './backend/config/db.php'; 
 
     class Auth {
         private $conn;
@@ -9,6 +8,7 @@
             $db = new Database();
             $this->conn = $db->getCon();
         }
+
         
         public function getAll($table){
             $stmt = $this->conn->prepare("SELECT * FROM $table");
@@ -16,6 +16,13 @@
             $all = $stmt->fetchAll();
             return $all;
         }
+
+        public function getRank($table){
+            $stmt = $this->conn->prepare("SELECT * FROM $table WHERE `rank` = 1 LIMIT 1");
+            $stmt->execute();
+            $admin = $stmt->fetch();
+            return $admin;
+        }        
 
         // action register
         public function register($username,$password,$email){

@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    require_once './backend/routes/data.php';
+    $data = new Data();
+    $totalUser = $data->getCount("users");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,6 @@
 </head>
 
 <body>
-
     <div class="toast-container position-fixed bottom-0 end-0 mb-2 p-3">
         <div id="welcomeToast" class="toast shadow-sm" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body text-primary">
@@ -66,6 +67,43 @@
                     </a>
                 </div>
             </div>
+        </div>
+        
+        <div class="row mt-5">
+            <!-- card ผู้ใช้งาน -->
+            <div class="col-12 col-md-4">
+                <div class="card cardz rounded-4" style="background-color: transparent; border: 1px solid white;">
+                    <div class="card-body">
+                        <p class="mb-0 text-light">ผู้ใช้งาน</p>
+                        <h1 class="d-inline text-light"><i class="bi bi-person-fill"></i> <?= $totalUser?></h1>>
+                        <p class="d-inline text-light">คน</p>
+                    </div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card rounded-4" style="background-color: transparent; border: 1px solid white;">
+                    <div class="card-body">
+                        <p class="mb-0 text-light">สต๊อก</p>
+                        <h1 class="d-inline text-light"><i class="bi bi-basket-fill"></i> <?= $totalUser?></h1>>
+                        <p class="d-inline text-light">ชิ้น</p>
+                    </div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card rounded-4" style="background-color: transparent; border: 1px solid white;">
+                    <div class="card-body">
+                        <p class="mb-0 text-light">ยอดขาย</p>
+                        <h1 class="d-inline text-light"><i class="bi bi-person-fill"></i> <?= $totalUser?></h1>>
+                        <p class="d-inline text-light">ครั้ง</p>
+                    </div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 

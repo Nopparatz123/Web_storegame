@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['user_login'])){
+        header("Location: /Web_storegame/login");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +12,6 @@
     <title>Document</title>
 </head>
 <body>
-    store
+    
 </body>
 </html>
