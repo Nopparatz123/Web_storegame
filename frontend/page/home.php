@@ -2,6 +2,7 @@
     require_once './backend/routes/data.php';
     $data = new Data();
     $totalUser = $data->getCount("users");
+    $announce = $data->getAnnounce(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,19 +11,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./frontend/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="./frontend/assets/css/global.css">
-    <link rel="stylesheet" href="./frontend/assets/css/option.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./frontend/assets/js/main.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</head>
 
+    <style>
+        /* style lodaing */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /* backdrop-filter: blur(10px); */
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #loading-screen {
+            opacity: 1;
+            transition: opacity 0.7s ease-out;
+        }
+    </style>
+</head>
 <body>
+    <!-- loading -->
+    <div id="loading-screen">
+        <div class="text-center">
+            <div class="spinner-border text-light" role="status"></div>
+            <p class="mt-2">กำลังโหลด...</p>
+        </div>
+    </div>
+    <!-- alert -->
     <div class="toast-container position-fixed bottom-0 end-0 mb-2 p-3">
         <div id="welcomeToast" class="toast shadow-sm" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body text-primary">
@@ -30,20 +49,19 @@
             </div>
         </div>
     </div>
-
+    <!-- background overlay -->
     <video autoplay loop muted playsinline class="blackgroud-clip">
         <source src="./frontend/assets/img/video.mp4">
     </video>
-
-    <div class="container-fluid" style="padding: 15rem 22rem;">
-        <?php include './frontend/includes/modal.php'; ?>
-        <?php include './frontend/includes/navbar.php'; ?>
-        <div class="title text-center" style="margin-bottom: 50px;">
-            <h1 class="text-light fw-bold typewriter" style="font-size: 70px;">ยินดีต้อนรับสู่เว็บไซต์ควยๆ</h1>
-            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis labor</p>
-        </div>
-        <marquee class="text-light mb-5"><span class="badge bg-danger me-2"><i class="bi bi-megaphone-fill"></i>
-                ประกาศ</span>ยังไม่เสร็จไอ้สัส !!</marquee>
+    <!-- content main -->
+    <div class="container-fluid" style="padding: 8rem 22rem;">
+        <?php if($announce):?>
+             <marquee class="text-light p-3">
+                <span class="badge bg-danger me-2">
+                     <i class="bi bi-megaphone-fill"></i> <?= $announce['texts']; ?>
+                </span>
+            </marquee>
+        <?php endif;?>
         <div class="row">
             <div class="col">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -71,7 +89,7 @@
         </div>
         
         <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
-            <!-- card ผู้ใช้งาน -->
+            <!-- card-->
             <div class="col-12 col-md-4">
                 <div class="card cardz rounded-4" style="background-color: transparent; border: 1px solid white;">
                     <div class="card-body">
@@ -101,16 +119,22 @@
                         <h1 class="d-inline text-light"><i class="bi bi-person-fill"></i> <?= $totalUser?></h1>>
                         <p class="d-inline text-light">ครั้ง</p>
                     </div>
-                    <div class="wave"></div>
                 </div>
             </div>
 
         </div>
     </div>
-
     <?php require './frontend/includes/footer.php'; ?>
     <script>
       AOS.init();
+      window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.getElementById("loading-screen").style.opacity = 0;
+                setTimeout(function () {
+                    document.getElementById("loading-screen").style.display = "none";
+                }, 200);
+            }, 200);
+        });
     </script>
 </body>
 </html>

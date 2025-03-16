@@ -1,6 +1,7 @@
 <?php
     require_once './backend/config/db.php'; 
-
+    include './frontend/alert.php'; 
+    
     class Auth {
         private $conn;
 
@@ -48,6 +49,8 @@
                     if($data && password_verify($password, $data['password'])){ //check login
                         $_SESSION['user_login'] = $data['id'];
                         $_SESSION['username'] = $data['username'];
+                        header('Location: /Web_storegame/home');
+                        exit();
                     }
                 }
             }catch(PDOException $e){

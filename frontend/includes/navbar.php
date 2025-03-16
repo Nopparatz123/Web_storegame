@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav mx-auto g-4">
                 <li class="nav-item me-2">
-                    <a href="/Web_storegame/home" class="nav-link navShowcontent navbar-optin actives"
+                    <a href="/Web_storegame/home" class="nav-link navShowcontent navbar-optin"
                         data-content="main">
                         <i class="bi bi-house-fill"></i> หน้าหลัก
                     </a>
@@ -46,7 +46,7 @@
                                 <i class="bi bi-person-fill"></i> <?= $_SESSION['username'] ?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="./profile" class="dropdown-item">โปรไฟล์</a></li>
+                                <li><a href="./Web_storegame/profile" class="dropdown-item">โปรไฟล์</a></li>
                                 <?php if (!empty($checkAdmin) && $checkAdmin['rank'] == 1): ?>
                                     <li><a href="./dashboard" class="dropdown-item">ระบบหลังบ้าน</a></li>
                                 <?php endif; ?>

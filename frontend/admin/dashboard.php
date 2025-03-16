@@ -27,12 +27,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-    <!-- add -->
+    <!-- เพิ่มคำประกาศ-->
     <form method="post">
-        <input type="text" name="texts">
-        <button type="submit" name="add_announce">ss</button>
+        <div style="margin-top: 500px;">
+            <input type="text" name="texts">
+            <button type="submit" name="add_announce">ss</button>
+        </div>
     </form>
-    <!-- edit -->
-    <input type="text" name="texts">
 </body>
 </html>

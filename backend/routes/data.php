@@ -16,11 +16,11 @@
             return $allUserCount;
         }
 
-        public function getAll($table){
-            $stmt = $this->conn->prepare("SELECT * FROM $table");
+        public function getAnnounce(){
+            $stmt = $this->conn->prepare("SELECT * FROM announce ORDER BY id DESC LIMIT 1");
             $stmt->execute();
-            $all = $stmt->fetchAll();
-            return $all;
+            $announce = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $announce;
         }
     }
 

@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row text-center text-lg-left">
             <div class="col-12 col-lg-4 mb-3">
-                <img src="" width="180" class="mb-2">
                 <h5 class="text-main">Noname</h5>
                 <p class="text-main small">บริการขายส้นตีน &amp; กับอะไรไม่รู้ </p>
             </div>
