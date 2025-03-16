@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    store
+    payment
 </body>
 </html>

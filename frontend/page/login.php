@@ -1,3 +1,13 @@
+<?php
+     require_once './backend/routes/auth.php';
+     $auth = new Auth();
+
+     if(isset($_POST['login'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $auth->login($username, $password);
+     }
+?>
 <head>
     <link rel="stylesheet" href="./frontend/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -11,7 +21,7 @@
 </head>
 <body>
     <video autoplay loop muted playsinline class="blackgroud-clip">
-        <source src="../assets/video.mp4">
+        <source src="./frontend/assets/img/video.mp4">
     </video>
     <div class="container" style="margin-top: 200px;">
     <?php require './frontend/includes/navbar.php'; ?>
@@ -22,7 +32,7 @@
                         <h4 class="fw-bold h2">เข้าสู่ระบบ</h4>
                     </div>
                     <div class="card-body p-5 pt-3">
-                        <form action="" method="post">
+                        <form method="post">
                             <div class="form-floating mb-3">
                                 <input type="text" name="username" placeholder="ss" class="form-control" required>
                                 <label for="">Username</label>

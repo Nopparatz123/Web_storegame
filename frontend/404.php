@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>404</h1>
+    <h1 class="text-center text-primary">404</h1>
 </body>
 </html>

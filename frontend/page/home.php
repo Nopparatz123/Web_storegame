@@ -30,7 +30,7 @@
     </div>
 
     <video autoplay loop muted playsinline class="blackgroud-clip">
-        <source src="./assets/video.mp4">
+        <source src="./frontend/assets/img/video.mp4">
     </video>
 
     <div class="container-fluid" style="padding: 15rem 22rem;">

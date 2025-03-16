@@ -12,17 +12,17 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav mx-auto g-4">
                 <li class="nav-item me-2">
-                    <a href="home" class="nav-link navShowcontent navbar-optin actives" data-content="main">
+                    <a href="/Web_storegame/home" class="nav-link navShowcontent navbar-optin actives" data-content="main">
                         <i class="bi bi-house-fill"></i> หน้าหลัก
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="store" class="nav-link navShowcontent navbar-optin" data-content="store">
+                    <a href="/Web_storegame/store" class="nav-link navShowcontent navbar-optin" data-content="store">
                         <i class="bi bi-shop"></i> ร้านค้า
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="card" class="nav-link navShowcontent navbar-optin" data-content="card">
+                    <a href="/Web_storegame/payment" class="nav-link navShowcontent navbar-optin" data-content="card">
                         <i class="bi bi-credit-card"></i> เติมเงิน
                     </a>
                 </li>
@@ -39,7 +39,7 @@
                             <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><?= $_SESSION['username'] ?></a>
                             <ul class="dropdown-menu">
                                 <li><a href="" class="dropdown-item">โปรไฟล์</a></li>
-                                <li><a href="./controller/logout.php" class="dropdown-item text-danger">ออกจากระบบ</a></li>
+                                <li><a href="./logout" class="dropdown-item text-danger">ออกจากระบบ</a></li>
                             </ul>
                         </li>
                     </ul>

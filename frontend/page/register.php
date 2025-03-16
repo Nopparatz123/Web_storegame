@@ -1,3 +1,14 @@
+<?php
+    require_once './backend/routes/auth.php';
+    $auth = new Auth();
+
+    if(isset($_POST['register'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $auth->register($username, $password, $email);
+    }
+?>
 <head>
     <link rel="stylesheet" href="./frontend/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -11,7 +22,7 @@
 </head>
 <body>
     <video autoplay loop muted playsinline class="blackgroud-clip">
-        <source src="../assets/video.mp4">
+        <source src="./frontend/assets/img/video.mp4">
     </video>
     <div class="container" style="margin-top: 200px;">
     <?php require './frontend/includes/navbar.php'; ?>
@@ -28,16 +39,16 @@
                                 <label for="">Username</label>
                             </div>
                             <div class="form-floating mb-2 position-relative">
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password"  id="password" class="form-control" placeholder="Password" required>
                                 <label for="password">Password</label>
                                 <i class="bi bi-eye" id="togglePassword" onclick="showPassword();" style="cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></i>
                             </div>
 
                             <div class="form-floating mb-3 position-relative">
-                                <input type="email" name="email"  class="form-control" placeholder="ess" required>
+                                <input type="email" name="email" class="form-control" placeholder="ess" required>
                                 <label for="">Email</label>
                             </div>
-                            <button class="btn btn-primary w-100 rounded-4" name="register">สมัครสมาชิก</button>
+                            <button class="btn btn-primary w-100 rounded-4" type="submit" name="register">สมัครสมาชิก</button>
                        </form>
                     </div>
                 </div>
@@ -47,16 +58,16 @@
 </body>
 
 <script>
-    togglePassword.addEventListener("click", function () {
+    document.getElementById("togglePassword").addEventListener("click", function () {
+        let password = document.getElementById("password");
         if (password.type === 'password') {
             password.type = 'text';
-            togglePassword.classList.remove("bi-eye");
-            togglePassword.classList.add("bi-eye-slash");
+            this.classList.remove("bi-eye");
+            this.classList.add("bi-eye-slash");
         } else {
             password.type = 'password';
-            togglePassword.classList.remove("bi-eye-slash");
-            togglePassword.classList.add("bi-eye");
+            this.classList.remove("bi-eye-slash");
+            this.classList.add("bi-eye");
         }
     });
-
 </script>

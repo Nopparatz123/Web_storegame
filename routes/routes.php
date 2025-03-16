@@ -5,4 +5,7 @@
     $route->add('home', 'frontend/page/home.php');
     $route->add('login', 'frontend/page/login.php');
     $route->add('register', 'frontend/page/register.php');
+    $route->add('store', 'frontend/page/system/store.php');
+    $route->add('payment', 'frontend/page/system/payment.php');
+    $route->add('logout', 'backend/config/logout.php');
 ?>
