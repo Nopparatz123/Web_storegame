@@ -11,7 +11,7 @@ class Route {
             require $this->routes[$request];
         } else {
             http_response_code(404);
-            require 'frontend/404.php'; // โหลดหน้า 404
+            require './frontend/404.php'; // โหลดหน้า 404
             exit;
         }
     }

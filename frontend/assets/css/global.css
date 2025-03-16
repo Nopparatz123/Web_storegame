@@ -35,6 +35,20 @@
     src: url(./Kanit-Regular.ttf);
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
 body,html{
     font-family: 'Kanit';
     background: var(--background);

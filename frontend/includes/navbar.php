@@ -48,7 +48,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="./profile" class="dropdown-item">โปรไฟล์</a></li>
                                 <?php if (!empty($checkAdmin) && $checkAdmin['rank'] == 1): ?>
-                                    <li><a href="./admin" class="dropdown-item">ระบบหลังบ้าน</a></li>
+                                    <li><a href="./dashboard" class="dropdown-item">ระบบหลังบ้าน</a></li>
                                 <?php endif; ?>
                                 <li><a href="./logout" class="dropdown-item text-danger">ออกจากระบบ</a></li>
                             </ul>

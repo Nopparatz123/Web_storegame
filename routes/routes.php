@@ -7,6 +7,7 @@
     $route->add('login', 'frontend/page/login.php');
     $route->add('register', 'frontend/page/register.php');
     $route->add('store', 'frontend/page/system/store.php');
+    $route->add('dashboard', 'frontend/admin/dashboard.php');
     $route->add('profile', 'frontend/page/system/profile.php');
     $route->add('payment', 'frontend/page/system/payment.php');
     $route->add('logout', 'backend/config/logout.php');
