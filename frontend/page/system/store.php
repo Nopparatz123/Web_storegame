@@ -10,12 +10,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .view-more {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+
+        .card:hover .view-more {
+            opacity: 1;
+        }
+
+        .card .card-img-top{
+            transition:opacity 0.2s ease-in ;
+        }
+
+        .card:hover .card-img-top {
+            opacity: 20%;
+            filter: blur(2px);
+        }
+        </style>
 </head>
 <body>
     <video autoplay loop muted playsinline class="blackgroud-clip">
         <source src="./frontend/assets/img/video.mp4">
     </video>
-    <div class="container" style="margin-top: 150px; margin-bottom: 200px;">
+    <div class="container" style="margin-top: 150px; margin-bottom: 200px; padding: 0rem 5rem;">
 
         <h5 class="text-secondary">รายการหมวดหมู่</h5>
         <p class="text-light">Category List</p>

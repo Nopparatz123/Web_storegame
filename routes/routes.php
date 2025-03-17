@@ -11,5 +11,6 @@
     $route->add('dashboard', 'frontend/admin/dashboard.php');
     $route->add('profile', 'frontend/page/system/profile.php');
     $route->add('payment', 'frontend/page/system/payment.php');
+    $route->add('contact', 'frontend/page/system/contact.php');
     $route->add('logout', 'backend/config/logout.php');
 ?>

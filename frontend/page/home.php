@@ -54,14 +54,7 @@
         <source src="./frontend/assets/img/video.mp4">
     </video>
     <!-- content main -->
-    <div class="container-fluid" style="padding: 8rem 22rem;">
-        <?php if($announce):?>
-             <marquee class="text-light p-3">
-                <span class="badge bg-danger me-2">
-                     <i class="bi bi-megaphone-fill"></i> <?= $announce['texts']; ?>
-                </span>
-            </marquee>
-        <?php endif;?>
+    <div class="container-fluid" style="padding: 10rem 22rem;">
         <div class="row">
             <div class="col">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -87,8 +80,14 @@
                 </div>
             </div>
         </div>
-        
-        <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <?php if($announce):?>
+             <marquee class="text-light p-3">
+                <span class="badge text-dark bg-warning p-2 me-2">
+                     <i class="bi bi-megaphone-fill"></i> <?= $announce['texts']; ?> !!
+                </span>
+            </marquee>
+        <?php endif;?>
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
             <!-- card-->
             <div class="col-12 col-md-4">
                 <div class="card cardz rounded-4" style="background-color: transparent; border: 1px solid white;">

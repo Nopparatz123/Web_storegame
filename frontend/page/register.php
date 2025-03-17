@@ -23,9 +23,8 @@
                         <h4 class="fw-bold h2">สมัครสมาชิก</h4>
                     </div>
                     <div class="card-body p-5 pt-3">
-                       <form method="post">
                             <div class="form-floating mb-3">
-                                <input type="text" name="username" placeholder="ss" class="form-control" required>
+                                <input type="text" id="username" placeholder="ss" class="form-control" required>
                                 <label for="">Username</label>
                             </div>
                             <div class="form-floating mb-2 position-relative">
@@ -35,11 +34,10 @@
                             </div>
 
                             <div class="form-floating mb-3 position-relative">
-                                <input type="email" name="email" class="form-control" placeholder="ess" required>
+                                <input type="email" id="email" class="form-control" placeholder="ess" required>
                                 <label for="">Email</label>
                             </div>
-                            <button class="btn btn-primary w-100 rounded-4" type="submit" name="register">สมัครสมาชิก</button>
-                       </form>
+                            <button class="btn btn-primary w-100 rounded-4" onclick="registerUser()" type="submit" name="register">สมัครสมาชิก</button>
                     </div>
                 </div>
             </div>

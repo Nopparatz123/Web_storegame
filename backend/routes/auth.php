@@ -1,6 +1,6 @@
 <?php
     require_once './backend/config/db.php'; 
-    include './frontend/alert.php'; 
+
     
     class Auth {
         private $conn;
