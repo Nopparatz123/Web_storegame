@@ -1,6 +1,7 @@
 <?php
      require_once './backend/routes/auth.php';
      $auth = new Auth();
+     
 
      if(isset($_POST['login'])){
         $username = $_POST['username'];
@@ -61,5 +62,4 @@
             togglePassword.classList.add("bi-eye");
         }
     });
-
 </script>

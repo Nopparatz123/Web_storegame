@@ -1,7 +1,6 @@
 <?php
-    require_once './backend/config/db.php'; 
+    require_once './backend/config/db.php';
 
-    
     class Auth {
         private $conn;
 
@@ -10,53 +9,47 @@
             $this->conn = $db->getCon();
         }
 
-        
-        public function getAll($table){
-            $stmt = $this->conn->prepare("SELECT * FROM $table");
-            $stmt->execute();
-            $all = $stmt->fetchAll();
-            return $all;
-        }
-
-        public function getRank($table){
-            $stmt = $this->conn->prepare("SELECT * FROM $table WHERE `rank` = 1 LIMIT 1");
-            $stmt->execute();
-            $admin = $stmt->fetch();
-            return $admin;
-        }        
-
         // action register
         public function register($username,$password,$email){
             try{
-                $getall = $this->getAll("users");
-                foreach($getall as $data){
-                    if($data['email'] == $email || $data['username'] == $username ){
-                        echo "เมลกับชื่อซ้ำ";
-                        return;
-                    }
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
+                $stmt->execute([$username_email, $username_email]);
+                $checkRegister = $stmt->fetch();
+
+                if($checkRegister['email'] == $email || $checkRegister['username'] == $username){
+                    echo "อีเมล์ กับ ชื่อผู้ใช้งานซ้ำ";
+                    return;
+                }else{
+                    // ถ้าไม่ซ้ำ ก็ letgoo
+                    $stmt = $this->conn->prepare("INSERT INTO users(username, password, email)VALUES(?, ?, ?)");
+                    $stmt->execute([$username, $password, $email]);
+                    header('Location: /Web_storegame/login');
+                    exit();
                 }
-                $stmt = $this->conn->prepare("INSERT INTO users(username,password,email)VALUES(?, ? , ?)");
-                $stmt->execute([$username,$password,$email]);
+
             }catch(PDOException $e){
                 echo "เกิดข้อผิดพลาด : " .$e->getMessage();
             }
         }
         // action login
-        public function login($username, $password){
+        public function login($username_email, $password){
             try{
-                $checkUser = $this->getAll("users");
-                foreach($checkUser as $data){
-                    if($data && password_verify($password, $data['password'])){ //check login
-                        $_SESSION['user_login'] = $data['id'];
-                        $_SESSION['username'] = $data['username'];
-                        header('Location: /Web_storegame/home');
-                        exit();
-                    }
-                }
+               $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
+               $stmt->execute([$username_email, $username_email]);
+               $user = $stmt->fetch();
+
+               if($user && password_verify($password, $user['password'])){
+                    $_SESSION['user_login'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    header('Location: /Web_storegame/home');
+                    exit();
+               }else{
+                    echo "เกิดข้อผิดพลาด : ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+               }
             }catch(PDOException $e){
                 echo "เกิดข้อผิดพลาด : " .$e->getMessage();
             }
-        }
+        }        
 
     }
 ?>

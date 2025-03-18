@@ -51,7 +51,7 @@
                         <h5 class="text-light">Freefire</h5>
                         <p class="text-danger">0 สินค้า</p>
                         <div class="view-more">
-                            <a href="" class="btn btn-outline-light">ดูเพิ่มเติม</a>
+                            <a href="/Web_storegame/dt_category" class="btn btn-outline-light">ดูเพิ่มเติม</a>
                         </div>
                     </div>
                 </div>

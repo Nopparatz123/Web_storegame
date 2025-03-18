@@ -57,11 +57,9 @@ body,html{
     linear-gradient(to bottom, #1d1d1d 1px, transparent 1px);
     background-size: 30px 30px;
     background-position: 0 0
+    
 }
 
-.container-fluid {
-    padding: 10vw 5vw;
-}
 
 
 .carousel-item img {

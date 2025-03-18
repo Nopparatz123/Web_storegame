@@ -1,7 +1,17 @@
 <?php
-    require_once './backend/routes/auth.php';
-    $auth = new Auth();
-    $checkAdmin = $auth->getRank('users');
+    require_once './backend/routes/data.php';
+    $data = new Data();
+    $checkAdmin = $data->getRank('users');
+    // เช็ค_ถ้ายังไม่ล็อกอิน
+    if (isset($_SESSION['user_login'])) {
+        $userId = $_SESSION['user_login'];
+        $point = $data->getPoint($userId);
+        if ($point === null) {
+            $point = 0;
+        }
+    } else {
+        $point = 0;
+    }
 ?>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
     <div class="container d-flex justify-content-between align-items-center">
@@ -40,17 +50,21 @@
             </ul>
             <div class="d-flex align-items-center">
                 <?php if(isset($_SESSION['user_login'])): ?>
-                    <ul class="dropdown navbar-nav">
+                    <ul class="dropdown navbar-nav text-center">
                         <li class="nav-item">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="bi bi-person-fill"></i> <?= $_SESSION['username'] ?>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="./Web_storegame/profile" class="dropdown-item">โปรไฟล์</a></li>
+                            <ul class="dropdown-menu p-3">
+                                <li><a href="" class="dropdown-item text-dark"><i class="bi bi-coin text-primary"></i> ยอดเงินคงเหลือ : <?= $point ?> บาท</a></li>
+                                <hr>
+                                <li><a href="/Web_storegame/profile" class="dropdown-item text-primary"><i class="bi bi-person-circle"></i> ข้อมูลส่วนตัว</a></li>
+                                <li><a href="./Web_storegame/" class="dropdown-item text-primary"><i class="bi bi-clock-history"></i> ประวัติทั้งหมด</a></li>
                                 <?php if (!empty($checkAdmin) && $checkAdmin['rank'] == 1): ?>
-                                    <li><a href="./dashboard" class="dropdown-item">ระบบหลังบ้าน</a></li>
+                                    <li><a href="./dashboard" class="dropdown-item text-primary"><i class="bi bi-gear-fill"></i> จัดการระบบ</a></li>
                                 <?php endif; ?>
-                                <li><a href="./logout" class="dropdown-item text-danger">ออกจากระบบ</a></li>
+                                <hr>
+                                <li><a href="./logout" class="dropdown-item text-danger"><i class="bi bi-box-arrow-left"></i> ออกจากระบบ</a></li>
                             </ul>
                         </li>
                     </ul>

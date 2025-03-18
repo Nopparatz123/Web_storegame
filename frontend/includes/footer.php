@@ -15,7 +15,7 @@
                 </ul>
             </div>
             <div class="col-12 col-lg-4 text-center mb-3">
-                <iframe src="https://discord.com/widget?id=931922504241532929&theme=dark" width="285" height="280" frameborder="0"></iframe>
+                <iframe src="https://discord.com/widget?id=1032435567142645772&theme=dark" width="285" height="280" frameborder="0"></iframe>
             </div>
         </div>
         <hr>

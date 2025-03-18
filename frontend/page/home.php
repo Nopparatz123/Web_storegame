@@ -10,15 +10,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Name - Home</title>
 
     <style>
         /* style lodaing */
         #loading-screen {
             position: fixed;
-            width: 100%;
-            height: 100%;
-            /* backdrop-filter: blur(10px); */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background-color: black;
             color: white;
             display: flex;
@@ -31,19 +32,25 @@
             opacity: 1;
             transition: opacity 0.7s ease-out;
         }
+
+        .card {
+            background-color: transparent;
+            border-radius: 10px;
+            border: 1px white solid;
+        }
     </style>
 </head>
 <body>
     <!-- loading -->
+    <!-- alert -->
     <div id="loading-screen">
         <div class="text-center">
             <div class="spinner-border text-light" role="status"></div>
             <p class="mt-2">กำลังโหลด...</p>
         </div>
     </div>
-    <!-- alert -->
     <div class="toast-container position-fixed bottom-0 end-0 mb-2 p-3">
-        <div id="welcomeToast" class="toast shadow-sm" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="welcomeToast" class="toast shadow-sm bg-light p-1" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body text-primary">
                 ยินดีต้อนรับสู่เว็บของเรา !!
             </div>
@@ -54,9 +61,9 @@
         <source src="./frontend/assets/img/video.mp4">
     </video>
     <!-- content main -->
-    <div class="container-fluid" style="padding: 10rem 22rem;">
+    <div class="container" style="margin-top: 200px; margin-bottom: 200px;">
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -81,13 +88,15 @@
             </div>
         </div>
         <?php if($announce):?>
-             <marquee class="text-light p-3">
-                <span class="badge text-dark bg-warning p-2 me-2">
-                     <i class="bi bi-megaphone-fill"></i> <?= $announce['texts']; ?> !!
-                </span>
-            </marquee>
+             <div class="card mt-3 mb-3">
+                <marquee class="p-3">
+                    <span class="badge p-2 me-2 rounded-5 text-primary" style="font-size: 15px;">
+                        <i class="bi bi-megaphone-fill"></i> <?= $announce['texts']; ?> ! !
+                    </span>
+                </marquee>
+             </div>
         <?php endif;?>
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row g-3" data-aos="fade-up" data-aos-duration="1000">
             <!-- card-->
             <div class="col-12 col-md-4">
                 <div class="card cardz rounded-4" style="background-color: transparent; border: 1px solid white;">

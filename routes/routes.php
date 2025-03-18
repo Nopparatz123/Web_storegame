@@ -12,5 +12,8 @@
     $route->add('profile', 'frontend/page/system/profile.php');
     $route->add('payment', 'frontend/page/system/payment.php');
     $route->add('contact', 'frontend/page/system/contact.php');
+    $route->add('topup', 'frontend/page/system/topup.php');
+    $route->add('redeem', 'frontend/page/system/redeem.php');
+    $route->add('dt_category', 'frontend/page/system/dt_category.php');
     $route->add('logout', 'backend/config/logout.php');
 ?>

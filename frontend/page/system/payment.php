@@ -32,7 +32,7 @@
                         <img class="card-img-top" src="./frontend/assets/img/voucher.png" alt="Card image cap" style="width: 85%; height: auto;">
                         <h3 class="card-title text-primary mt-2">ซองอั่งเปา</h3>
                         <p class="card-text text-light">เติมเงินผ่านซองอั่งเปา TrueWallet </p>
-                        <a href="#" class="btn btn-primary">เติมเงิน</a>
+                        <a href="/Web_storegame/topup" class="btn btn-primary">เติมเงิน</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         <img class="card-img-top" src="./frontend/assets/icon/gift-card.png" alt="Card image cap" style="width: 60%; height: auto;">
                         <h3 class="card-title  text-primary mt-2">กรอกโค้ด</h5>
                         <p class="card-text text-light">กรอกโค้ดรับเงินจากร้านค้า</p>
-                        <a href="#" class="btn btn-primary">เติมเงิน</a>
+                        <a href="/Web_storegame/redeem" class="btn btn-primary">เติมเงิน</a>
                     </div>
                 </div>
             </div>
