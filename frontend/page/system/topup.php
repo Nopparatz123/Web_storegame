@@ -50,16 +50,14 @@
             </div>
             <div class="col-12 col-md-5 mb-5">
                 <div class="form-floating">
-                    <input type="text" name="topup" class="form-control custom-input"
-                        placeholder="topup">
+                    <input type="text" id="topup-input" name="topup" class="form-control custom-input" placeholder="topup">
                     <label for="">กรอกลิ้งค์ซองของขวัญ</label>
                     <p class="mt-2 text-center text-danger">ค่าธรรมเนียม 2.3 %</p>
-                    <button class="btn btn-primary w-100">ยืนยันการเติม</button>
+                    <button id="submit-topup" class="btn btn-primary w-100">ยืนยันการเติม</button>
                 </div>
             </div>
         </div>
     </div>
-
     <?php require './frontend/includes/footer.php'; ?>
 </body>
 

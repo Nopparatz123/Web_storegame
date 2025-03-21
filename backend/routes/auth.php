@@ -1,5 +1,6 @@
 <?php
     require_once './backend/config/db.php';
+    require_once './backend/function.php';
 
     class Auth {
         private $conn;
@@ -17,14 +18,12 @@
                 $checkRegister = $stmt->fetch();
 
                 if($checkRegister['email'] == $email || $checkRegister['username'] == $username){
-                    echo "อีเมล์ กับ ชื่อผู้ใช้งานซ้ำ";
-                    return;
+                    alert("error", "มีชื่อผู้ใช้บัญชีนี้แล้ว", "error", "/Web_storegame/home");
                 }else{
                     // ถ้าไม่ซ้ำ ก็ letgoo
                     $stmt = $this->conn->prepare("INSERT INTO users(username, password, email)VALUES(?, ?, ?)");
                     $stmt->execute([$username, $password, $email]);
-                    header('Location: /Web_storegame/login');
-                    exit();
+                    alert("Success", "สมัครสมาชิกสำเร็จ", "success", "/Web_storegame/login");
                 }
 
             }catch(PDOException $e){
@@ -41,10 +40,9 @@
                if($user && password_verify($password, $user['password'])){
                     $_SESSION['user_login'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
-                    header('Location: /Web_storegame/home');
-                    exit();
+                    alert("Success", "เข้าสู่ระบบสำเร็จ", "success", "/Web_storegame/home");
                }else{
-                    echo "เกิดข้อผิดพลาด : ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+                    alert("Error", "ชื่อผู้ใช้งาน หรือ รหัสผ่านไม่ถูกต้อง", "error", "/Web_storegame/login");
                }
             }catch(PDOException $e){
                 echo "เกิดข้อผิดพลาด : " .$e->getMessage();

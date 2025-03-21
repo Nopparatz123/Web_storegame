@@ -27,24 +27,24 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav mx-auto g-4">
                 <li class="nav-item me-2">
-                    <a href="/Web_storegame/home" class="nav-link navShowcontent navbar-optin"
+                    <a href="/Web_storegame/home" class="nav-link navbar-optin"
                         data-content="main">
                         <i class="bi bi-house-fill"></i> หน้าหลัก
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Web_storegame/store" class="nav-link navShowcontent navbar-optin" data-content="store">
+                    <a href="/Web_storegame/store" class="nav-link navbar-optin">
                         <i class="bi bi-shop"></i> ร้านค้า
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Web_storegame/payment" class="nav-link navShowcontent navbar-optin" data-content="card">
+                    <a href="/Web_storegame/payment" class="nav-link navbar-optin">
                         <i class="bi bi-credit-card"></i> เติมเงิน
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact" class="nav-link navShowcontent navbar-optin" data-content="contact">
-                        <i class="bi bi-file-earmark-person-fill"></i> ช่องทางการติดต่อ
+                    <a href="contact" class="nav-link navShowcontent navbar-optin">
+                        <i class="bi bi-headset"></i> ช่องทางการติดต่อ
                     </a>
                 </li>
             </ul>

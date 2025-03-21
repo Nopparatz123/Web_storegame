@@ -16,4 +16,5 @@
     $route->add('redeem', 'frontend/page/system/redeem.php');
     $route->add('dt_category', 'frontend/page/system/dt_category.php');
     $route->add('logout', 'backend/config/logout.php');
+    $route->add('topupProcess', 'backend/system/topup_process.php');
 ?>

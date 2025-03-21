@@ -22,26 +22,25 @@ $(document).ready(function() {
         $(".navbar-nav .nav-link").removeClass("actives");
         $(this).addClass("actives");
     });
+
+        // let lastContent = localStorage.getItem('lastContent');
+        // if(lastContent){
+        //     $('.displayContent').hide();
+        //     $('.displayContent').first().fadeIn();
+        // }else{
+        //     $('.displayContent').hide();
+        //     $('.displayContent').first().fadeIn();
+        // }
+    
+        // $('.navShowcontent').on('click', function(e){
+        //     e.preventDefault();
+        //     let showContent = $(this).data('content');
+        //     $('.displayContent').hide();
+        //     $('#' + showContent).fadeIn();
+    
+        //     localStorage.setItem('lastContent', showContent);
+        // })
 });
 
 
 
-// $(document).ready(function(){
-//     let lastContent = localStorage.getItem('lastContent');
-//     if(lastContent){
-//         $('.displayContent').hide();
-//         $('#' + lastContent).fadeIn();
-//     }else{
-//         $('.displayContent').hide();
-//         $('.displayContent').first().fadeIn();
-//     }
-
-//     $('.navShowcontent').on('click', function(e){
-//         e.preventDefault();
-//         let showContent = $(this).data('content');
-//         $('.displayContent').hide();
-//         $('#' + showContent).fadeIn();
-
-//         localStorage.setItem('lastContent', showContent);
-//     })
-// })

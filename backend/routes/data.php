@@ -9,6 +9,13 @@
             $this->conn = $db->getCon();
         }
 
+        public function getAllUser(){
+            $stmt = $this->conn->prepare("SELECT * FROM users");
+            $stmt->execute();
+            $alluser = $stmt->fetchAll();
+            return $alluser;
+        }
+    
         public function getUserProfile($session_id) {
             $stmt = $this->conn->prepare("SELECT * FROM users WHERE id = ?");
             $stmt->execute([$session_id]);
@@ -48,6 +55,31 @@
             $stmt->execute();
             $announce = $stmt->fetch(PDO::FETCH_ASSOC);
             return $announce;
+        }
+
+        public function getAnnounce2(){
+            $stmt = $this->conn->prepare("SELECT * FROM announce ORDER BY id DESC LIMIT 3");
+            $stmt->execute();
+            $announce2 = $stmt->fetchAll();
+            return $announce2;
+        }
+
+        public function deleteAnnounce($id){
+            $stmt = $this->conn->prepare("DELETE FROM announce WHERE id = ?");
+            $stmt->execute([$id]);
+            return $stmt;
+        }
+
+        public function getTotalTopup($type = 'all'){
+            $where = '';
+            if($type === 'today'){
+                $where = "WHERE DATE(created_at) = CURDATE()";
+            }elseif ($type === 'month') {
+                $where = "WHERE YEAR(created_at) = YEAR(CURDATE()) AND MONTH(created_at) = MONTH(CURDATE())";
+            }
+            $stmt = $this->conn->prepare("SELECT SUM(amount) AS total FROM transactions $where");
+            $stmt->execute();
+            return $stmt->fetchColumn() ? : 0;
         }
     }
 
